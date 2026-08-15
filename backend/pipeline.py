@@ -7,6 +7,7 @@ validation, explainability record generation, AI enrichment, and quality scoring
 
 import os
 import uuid
+import json
 from typing import Dict, Any, Tuple, Optional, List
 
 from backend.models import (
@@ -15,7 +16,7 @@ from backend.models import (
     EvidenceRecord, ExplainabilityRecord, MatchStatus, EvidenceType,
     SourceReliability, CommerceReadinessStatus, ConflictRecord
 )
-from backend.extraction import extract_pdf_pages, call_ollama_structured_extraction
+from backend.extraction import extract_pdf_pages
 from backend.normalization import normalize_specification
 from backend.validation import validate_product_data
 from backend.evidence import isolate_evidence_record
@@ -26,6 +27,139 @@ from backend.scoring import calculate_quality_score
 from backend.conflicts import detect_product_conflicts
 from backend.ingestion.models import SourceDocument
 from backend.ingestion.manager import ingest_sources, IngestionError
+
+
+def _gemini_structured_extraction(
+    combined_text: str,
+    user_metadata: Dict[str, Any]
+) -> Tuple[Optional[Dict[str, Any]], str]:
+    """
+    Extract structured product intelligence using Google Gemini.
+
+    The returned dictionary intentionally keeps the same structure expected by
+    the existing ProductIQ pipeline:
+      {
+        "product": {...},
+        "specifications": [...],
+        "enrichment": {...},
+        "applications": [...],
+        "keywords": [...]
+      }
+    """
+    api_key = os.getenv("GEMINI_API_KEY")
+    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+
+    if not api_key:
+        return None, "GEMINI_API_KEY is not configured on the server."
+
+    try:
+        from google import genai
+    except Exception as exc:
+        return None, f"Google Gemini SDK is unavailable: {exc}"
+
+    # Keep the extraction contract explicit so downstream normalization,
+    # evidence verification, validation, and scoring remain unchanged.
+    prompt = f"""
+You are the ProductIQ AI industrial product intelligence extraction engine.
+
+Extract ONLY information supported by the supplied source text.
+Do not invent specifications, values, units, manufacturers, product codes,
+applications, or keywords. If information is missing, omit it or return an
+empty value.
+
+User-provided metadata:
+{json.dumps(user_metadata, ensure_ascii=False)}
+
+Return ONLY valid JSON. No markdown fences and no explanatory text.
+
+Required JSON structure:
+{{
+  "product": {{
+    "product_name": "...",
+    "manufacturer": "...",
+    "product_code": "...",
+    "category": "...",
+    "description": "..."
+  }},
+  "specifications": [
+    {{
+      "name": "...",
+      "value": "...",
+      "unit": "...",
+      "original_value": "...",
+      "raw_value": "...",
+      "normalization_applied": false,
+      "normalization_rule": null,
+      "page": null
+    }}
+  ],
+  "enrichment": {{
+    "summary": "...",
+    "key_features": [],
+    "suggested_applications": [],
+    "search_terms": []
+  }},
+  "applications": [],
+  "keywords": []
+}}
+
+For every specification:
+- "raw_value" should contain the value as it appears in the source.
+- "original_value" should preserve the original wording where useful.
+- "page" should be the source page number when it is explicitly available.
+- Never create a value merely because a field exists in the schema.
+
+SOURCE TEXT:
+{combined_text}
+"""
+
+    try:
+        client = genai.Client(api_key=api_key)
+
+        response = client.models.generate_content(
+            model=model,
+            contents=prompt,
+            config={
+                "response_mime_type": "application/json",
+                "temperature": 0
+            }
+        )
+
+        raw_text = getattr(response, "text", None)
+        if not raw_text:
+            return None, "Gemini returned an empty response."
+
+        # Be tolerant if a model still surrounds JSON with code fences.
+        cleaned = raw_text.strip()
+        if cleaned.startswith("```"):
+            cleaned = cleaned.replace("```json", "", 1).replace("```", "", 1).strip()
+
+        parsed = json.loads(cleaned)
+
+        if not isinstance(parsed, dict):
+            return None, "Gemini returned JSON, but the top-level value was not an object."
+
+        if not isinstance(parsed.get("product", {}), dict):
+            parsed["product"] = {}
+
+        if not isinstance(parsed.get("specifications", []), list):
+            parsed["specifications"] = []
+
+        if not isinstance(parsed.get("enrichment", {}), dict):
+            parsed["enrichment"] = {}
+
+        if not isinstance(parsed.get("applications", []), list):
+            parsed["applications"] = []
+
+        if not isinstance(parsed.get("keywords", []), list):
+            parsed["keywords"] = []
+
+        return parsed, ""
+
+    except json.JSONDecodeError as exc:
+        return None, f"Gemini returned invalid JSON: {exc}"
+    except Exception as exc:
+        return None, f"Gemini extraction failed: {exc}"
 
 
 def _detect_source_conflicts(spec_objects: List[SpecificationAttribute]) -> List[ValidationResult]:
@@ -110,7 +244,7 @@ def process_product_intelligence(
     product_id = f"PIQ-{uuid.uuid4().hex[:6].upper()}"
 
     # Step 2: AI Structured Extraction
-    ai_raw, ai_err = call_ollama_structured_extraction(combined_text, user_metadata)
+    ai_raw, ai_err = _gemini_structured_extraction(combined_text, user_metadata)
     if ai_err:
         return None, f"AI Extraction Failed: {ai_err}"
 
