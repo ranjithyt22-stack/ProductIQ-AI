@@ -23,7 +23,11 @@ from backend.state import product_state
 from backend.conflict import detect_conflicts
 from backend.dependencies import validate_url, get_allowed_origins
 
-from backend.config import OLLAMA_BASE_URL, OLLAMA_MODEL, UPLOADS_DIR
+from backend.config import UPLOADS_DIR
+
+# Gemini configuration
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 from backend.models import (
     ProductInfo, SpecificationAttribute, ValidationResult,
     AIEnrichment, ProductQualityScore, ProductIntelligenceRecord,
@@ -83,9 +87,10 @@ PRODUCT_STORE: Dict[str, ProductIntelligenceRecord] = {}
 
 class HealthResponse(BaseModel):
     status: str
-    ollama: str
+    ai: str
     database: str = "connected"
-    model: str = OLLAMA_MODEL
+    provider: str = "Gemini"
+    model: str = GEMINI_MODEL
 
 
 class URLAnalysisRequest(BaseModel):
@@ -163,22 +168,44 @@ class CreateProductRequest(BaseModel):
 
 @app.get("/health", response_model=HealthResponse, tags=["Health"])
 def get_health():
-    """Liveness, Database, and Ollama connectivity health check endpoint."""
-    ollama_status = "unavailable"
-    try:
-        res = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=2)
-        if res.status_code == 200:
-            ollama_status = "available"
-    except Exception:
-        ollama_status = "unavailable"
+    """
+    Liveness, database, and Gemini AI configuration/connectivity health check.
+    """
+    if not GEMINI_API_KEY:
+        return HealthResponse(
+            status="degraded",
+            ai="unavailable",
+            database="connected",
+            provider="Gemini",
+            model=GEMINI_MODEL
+        )
 
-    app_status = "ok" if ollama_status == "available" else "degraded"
-    return HealthResponse(
-        status=app_status,
-        ollama=ollama_status,
-        database="connected",
-        model=OLLAMA_MODEL
-    )
+    try:
+        from google import genai
+
+        client = genai.Client(api_key=GEMINI_API_KEY)
+
+        # Lightweight authenticated API check.
+        list(client.models.list(page_size=1))
+
+        return HealthResponse(
+            status="ok",
+            ai="connected",
+            database="connected",
+            provider="Gemini",
+            model=GEMINI_MODEL
+        )
+
+    except Exception as e:
+        logger.warning(f"Gemini health check failed: {e}")
+
+        return HealthResponse(
+            status="degraded",
+            ai="unavailable",
+            database="connected",
+            provider="Gemini",
+            model=GEMINI_MODEL
+        )
 
 
 @app.post("/analyze", tags=["Product Intelligence"])
@@ -1547,17 +1574,22 @@ def get_system_health_v1(db: Session = Depends(get_db)):
     failed_j_count = db.query(ProcessingJobEntity).filter(ProcessingJobEntity.status == "FAILED").count()
 
 
-    ollama_ok = False
-    try:
-        r = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=1.5)
-        ollama_ok = (r.status_code == 200)
-    except Exception:
-        ollama_ok = False
+    gemini_ok = bool(GEMINI_API_KEY)
+
+    if gemini_ok:
+        try:
+            from google import genai
+            client = genai.Client(api_key=GEMINI_API_KEY)
+            list(client.models.list(page_size=1))
+            gemini_ok = True
+        except Exception as e:
+            logger.warning(f"Gemini system health check failed: {e}")
+            gemini_ok = False
 
     return {
         "status": "healthy",
         "api_version": "2.5.0",
-        "environment": "Local Production",
+        "environment": "Production",
         "platform": platform.platform(),
         "python_version": sys.version.split()[0],
         "database": {
@@ -1569,10 +1601,9 @@ def get_system_health_v1(db: Session = Depends(get_db)):
             "jobs_failed": failed_j_count
         },
         "ai_engine": {
-            "provider": "Ollama",
-            "endpoint": OLLAMA_BASE_URL,
-            "status": "available" if ollama_ok else "offline",
-            "active_model": OLLAMA_MODEL
+            "provider": "Gemini",
+            "status": "available" if gemini_ok else "offline",
+            "active_model": GEMINI_MODEL
         }
     }
 
@@ -1621,7 +1652,3 @@ def get_data_quality_overview_v1(db: Session = Depends(get_db)):
             }
         ]
     }
-
-
-
-
