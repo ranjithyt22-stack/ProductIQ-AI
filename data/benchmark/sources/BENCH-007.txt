@@ -1,0 +1,21 @@
+SENSOTECH INSTRUMENTS
+PRODUCT DATA SHEET - INDUSTRIAL PRESSURE TRANSMITTER
+Model: PT-420-16BAR
+Category: Pressure Sensor
+
+Overview:
+Heavy-duty piezoresistive pressure transmitter designed for hydraulic power packs, compressed air networks, refrigeration equipment, and pump control.
+
+Technical Data:
+Measuring pressure range: 0 to 16 bar relative (gauge)
+Overpressure safety limit: 32 bar
+Burst pressure: 80 bar
+Analog output signal: 4 to 20 mA (2-wire)
+Accuracy: ±0.5 % FSO (Non-linearity, hysteresis, and repeatability)
+Power supply voltage: 10 to 30 V DC
+Process connection: G 1/4 B male EN 837
+Wetted Parts: Stainless steel 316L
+Operating Temperature: -30 to 100 °C
+Electrical Connection: DIN 175301-803 Form A angled connector
+Protection Degree: IP65
+Response Time: < 2 ms

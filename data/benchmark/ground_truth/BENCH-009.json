@@ -1,0 +1,55 @@
+{
+  "product_id": "BENCH-009",
+  "product_name": "High-Pressure Pilot Operated Solenoid Valve SV-HP-50",
+  "manufacturer": "Vortex Fluidics",
+  "product_code": "SV-HP-50",
+  "category": "Solenoid Valve",
+  "description": "2/2-way pilot operated solenoid valve for high-pressure industrial gas and liquid shut-off.",
+  "specifications": [
+    {
+      "name": "Operating Pressure Range",
+      "value": "1 to 50",
+      "unit": "bar",
+      "raw_value": "1 to 50 bar",
+      "page": 1,
+      "verbatim_evidence": "Differential operating pressure: 1 to 50 bar"
+    },
+    {
+      "name": "Orifice Size",
+      "value": "12",
+      "unit": "mm",
+      "raw_value": "12 mm",
+      "page": 1,
+      "verbatim_evidence": "Nominal internal orifice: 12 mm"
+    },
+    {
+      "name": "Flow Coefficient Kv",
+      "value": "3.2",
+      "unit": "m³/h",
+      "raw_value": "3.2 m³/h",
+      "page": 1,
+      "verbatim_evidence": "Flow factor (Kv): 3.2 m³/h"
+    },
+    {
+      "name": "Coil Voltage",
+      "value": "230",
+      "unit": "V AC",
+      "raw_value": "230 V AC",
+      "page": 1,
+      "verbatim_evidence": "Coil voltage: 230 V AC (50/60 Hz)"
+    },
+    {
+      "name": "Port Connection",
+      "value": "G 1/2",
+      "unit": null,
+      "raw_value": "G 1/2",
+      "page": 1,
+      "verbatim_evidence": "Port size: G 1/2 female"
+    }
+  ],
+  "negative_test_attributes": [
+    "Manual Override Handwheel",
+    "Hazardous Area Zone 0"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

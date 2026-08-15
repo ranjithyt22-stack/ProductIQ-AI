@@ -1,0 +1,20 @@
+HYDROFORCE DYNAMICS
+TECHNICAL PRODUCT BULLETIN - HYDRAULIC AXIAL PISTON PUMP
+Series: HP-A10V-45
+Category: Hydraulic Pump
+
+Product Overview:
+Variable displacement axial piston pump in swashplate design for open circuit hydraulic industrial drives. Flow is proportional to drive speed and displacement.
+
+Operating Parameters:
+Geometric displacement: 45 cm³/rev
+Nominal working pressure: 280 bar (28 MPa)
+Maximum peak pressure: 350 bar (35 MPa)
+Maximum drive speed: 2600 rpm
+Maximum delivery flow: 117 l/min at rated speed
+Drive Shaft: Splined shaft ANSI B92.1a
+Mounting Flange: SAE 2-bolt mounting flange
+Suction Port: SAE 1 1/2 inch 3000 psi flange
+Pressure Outlet Port: SAE 1 inch 6000 psi flange
+Hydraulic Fluid: Mineral oil HLP according to DIN 51524
+Viscosity Range: 16 to 36 mm²/s (cSt)

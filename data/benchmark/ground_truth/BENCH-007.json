@@ -1,0 +1,55 @@
+{
+  "product_id": "BENCH-007",
+  "product_name": "Piezoresistive Pressure Transmitter PT-420-16BAR",
+  "manufacturer": "Sensotech Instruments",
+  "product_code": "PT-420-16BAR",
+  "category": "Pressure Sensor",
+  "description": "Compact stainless steel industrial pressure transmitter with 4-20 mA output for liquid and gas pressure measurements.",
+  "specifications": [
+    {
+      "name": "Pressure Range",
+      "value": "0 to 16",
+      "unit": "bar",
+      "raw_value": "0 to 16 bar",
+      "page": 1,
+      "verbatim_evidence": "Measuring pressure range: 0 to 16 bar relative"
+    },
+    {
+      "name": "Output Signal",
+      "value": "4 to 20",
+      "unit": "mA",
+      "raw_value": "4-20 mA",
+      "page": 1,
+      "verbatim_evidence": "Analog output signal: 4 to 20 mA (2-wire)"
+    },
+    {
+      "name": "Accuracy",
+      "value": "0.5",
+      "unit": "% FSO",
+      "raw_value": "0.5 % FSO",
+      "page": 1,
+      "verbatim_evidence": "Accuracy: ±0.5 % FSO"
+    },
+    {
+      "name": "Supply Voltage",
+      "value": "10 to 30",
+      "unit": "V DC",
+      "raw_value": "10 to 30 V DC",
+      "page": 1,
+      "verbatim_evidence": "Power supply voltage: 10 to 30 V DC"
+    },
+    {
+      "name": "Process Connection",
+      "value": "G 1/4 B",
+      "unit": null,
+      "raw_value": "G 1/4 B",
+      "page": 1,
+      "verbatim_evidence": "Process connection: G 1/4 B male EN 837"
+    }
+  ],
+  "negative_test_attributes": [
+    "HART Communication Protocol",
+    "Submersible Cable Seal"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

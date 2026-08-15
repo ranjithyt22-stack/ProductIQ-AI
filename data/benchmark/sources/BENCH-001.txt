@@ -1,0 +1,22 @@
+ACME INDUSTRIAL SYSTEMS PVT. LTD.
+TECHNICAL DATASHEET - INDUSTRIAL PNEUMATIC CYLINDER
+Model: PC-50-100
+Category: Pneumatic Cylinder
+
+Product Overview:
+Heavy-duty double-acting pneumatic cylinder designed for high-cycle industrial automation systems. Robust aluminum profile barrel with corrosion-resistant stainless steel piston rod.
+
+Technical Specifications:
+Bore diameter: 50 mm
+Stroke length: 100 mm
+Operating pressure: 1 to 10 bar (0.1 to 1.0 MPa)
+Operating temperature range: -10 to 60 °C
+Pneumatic port connection: G 1/4
+Cushioning: Adjustable air cushioning both ends
+Mounting Style: Standard ISO 15552 flange and foot mountings
+Piston Rod Thread: M16x1.5
+
+Performance:
+Theoretical force at 6 bar: 1178 N (Extension)
+Theoretical force at 6 bar: 990 N (Retraction)
+Fluid: Compressed filtered lubricated or non-lubricated air.

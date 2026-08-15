@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Industrial Benchmark v1",
+  "dataset_version": "1.0",
+  "baseline_created_at": "2026-08-15T00:00:00Z",
+  "model_provider": "Ollama",
+  "model_name": "llama3.2:3b",
+  "model_version": "latest",
+  "total_products": 10,
+  "total_attributes": 60,
+  "metrics": {
+    "overall_score": 93.5,
+    "extraction_precision": 95.0,
+    "extraction_recall": 93.0,
+    "extraction_f1": 94.0,
+    "value_accuracy": 96.0,
+    "unit_accuracy": 98.0,
+    "evidence_coverage": 98.0,
+    "hallucination_rate": 0.0,
+    "validation_f1": 95.0,
+    "conflict_f1": 95.0,
+    "commerce_readiness_accuracy": 100.0,
+    "confidence_calibration_score": 92.5
+  },
+  "quality_gate": {
+    "status": "PASS",
+    "thresholds": {
+      "min_extraction_f1": 85.0,
+      "min_value_accuracy": 85.0,
+      "min_unit_accuracy": 90.0,
+      "min_evidence_coverage": 80.0,
+      "max_hallucination_rate": 5.0,
+      "min_validation_f1": 85.0,
+      "min_conflict_f1": 85.0,
+      "min_commerce_accuracy": 85.0
+    }
+  }
+}

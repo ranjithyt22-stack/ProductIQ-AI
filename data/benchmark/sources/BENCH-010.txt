@@ -1,0 +1,22 @@
+LINEARMOTION DYNAMICS
+TECHNICAL SPECIFICATION SHEET - INDUSTRIAL LINEAR ACTUATOR
+Model: LA-12V-300MM
+Category: Linear Actuator
+
+Product Overview:
+Heavy-duty industrial linear electric actuator designed for medical equipment, solar panel trackers, industrial ventilation hatches, and agricultural automation.
+
+Performance Characteristics:
+Stroke length: 300 mm
+Max dynamic push/pull load: 6000 N (600 kgf)
+Static holding load: 12000 N
+Actuation speed at full load: 5 mm/s
+Actuation speed without load: 10 mm/s
+Operating input voltage: 12 V DC
+Current at full load: 4.5 A
+Duty cycle: 10 % (2 min continuous on / 18 min off)
+Ingress protection rating: IP66
+Operating ambient temperature: -25 to 65 °C
+Limit Switches: Built-in fixed factory preset limit switches at both ends
+Housing Material: Aluminum alloy inner and outer extension tubes
+Screw Type: Acme lead screw with self-locking brake

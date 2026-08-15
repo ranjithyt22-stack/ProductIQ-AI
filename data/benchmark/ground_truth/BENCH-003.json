@@ -1,0 +1,63 @@
+{
+  "product_id": "BENCH-003",
+  "product_name": "PT100 Industrial RTD Temperature Sensor TS-PT100-3M",
+  "manufacturer": "ThermoSense Solutions",
+  "product_code": "TS-PT100-3M",
+  "category": "Temperature Sensor",
+  "description": "High-accuracy 3-wire stainless steel RTD temperature sensor probe for industrial process temperature monitoring.",
+  "specifications": [
+    {
+      "name": "Temperature Range",
+      "value": "-50 to 400",
+      "unit": "°C",
+      "raw_value": "-50 to 400 °C",
+      "page": 1,
+      "verbatim_evidence": "Operating temperature range: -50 to 400 °C"
+    },
+    {
+      "name": "Sensor Element",
+      "value": "PT100 Class A",
+      "unit": null,
+      "raw_value": "PT100 Class A",
+      "page": 1,
+      "verbatim_evidence": "Sensor element: PT100 Class A"
+    },
+    {
+      "name": "Probe Diameter",
+      "value": "6",
+      "unit": "mm",
+      "raw_value": "6 mm",
+      "page": 1,
+      "verbatim_evidence": "Probe sheath diameter: 6 mm"
+    },
+    {
+      "name": "Probe Length",
+      "value": "150",
+      "unit": "mm",
+      "raw_value": "150 mm",
+      "page": 1,
+      "verbatim_evidence": "Immersion probe length: 150 mm"
+    },
+    {
+      "name": "Cable Length",
+      "value": "3",
+      "unit": "m",
+      "raw_value": "3 m",
+      "page": 1,
+      "verbatim_evidence": "Lead cable length: 3 m"
+    },
+    {
+      "name": "Wiring Configuration",
+      "value": "3-wire",
+      "unit": null,
+      "raw_value": "3-wire",
+      "page": 1,
+      "verbatim_evidence": "Wiring configuration: 3-wire RTD"
+    }
+  ],
+  "negative_test_attributes": [
+    "Bluetooth Wireless Module",
+    "Internal Data Logger"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

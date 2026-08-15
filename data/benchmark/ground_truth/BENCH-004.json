@@ -1,0 +1,63 @@
+{
+  "product_id": "BENCH-004",
+  "product_name": "Deep Groove Precision Ball Bearing BB-6205-ZZ",
+  "manufacturer": "Apex Bearings Ltd",
+  "product_code": "BB-6205-ZZ",
+  "category": "Industrial Bearing",
+  "description": "High-precision double metal shielded deep groove radial ball bearing for industrial machinery.",
+  "specifications": [
+    {
+      "name": "Bore Diameter",
+      "value": "25",
+      "unit": "mm",
+      "raw_value": "25 mm",
+      "page": 1,
+      "verbatim_evidence": "Bore diameter (d): 25 mm"
+    },
+    {
+      "name": "Outer Diameter",
+      "value": "52",
+      "unit": "mm",
+      "raw_value": "52 mm",
+      "page": 1,
+      "verbatim_evidence": "Outer diameter (D): 52 mm"
+    },
+    {
+      "name": "Width",
+      "value": "15",
+      "unit": "mm",
+      "raw_value": "15 mm",
+      "page": 1,
+      "verbatim_evidence": "Width (B): 15 mm"
+    },
+    {
+      "name": "Dynamic Load Rating",
+      "value": "14.8",
+      "unit": "kN",
+      "raw_value": "14.8 kN",
+      "page": 1,
+      "verbatim_evidence": "Basic dynamic load rating (Cr): 14.8 kN"
+    },
+    {
+      "name": "Static Load Rating",
+      "value": "7.8",
+      "unit": "kN",
+      "raw_value": "7.8 kN",
+      "page": 1,
+      "verbatim_evidence": "Basic static load rating (Cor): 7.8 kN"
+    },
+    {
+      "name": "Limiting Speed",
+      "value": "15000",
+      "unit": "rpm",
+      "raw_value": "15000 rpm",
+      "page": 1,
+      "verbatim_evidence": "Limiting speed (grease): 15000 rpm"
+    }
+  ],
+  "negative_test_attributes": [
+    "Ceramic Ball Upgrade",
+    "Food Grade Grease H1"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

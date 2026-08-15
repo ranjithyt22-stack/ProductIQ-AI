@@ -1,10 +1,9 @@
 .venv/
 __pycache__/
 *.pyc
+uploads/
 .env
-.env.*
-.vscode/
-.idea/
-*.log
-.DS_Store
-data/uploads/
+*.db
+.gradio/
+data/*.json
+data/*.csv

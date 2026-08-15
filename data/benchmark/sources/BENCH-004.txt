@@ -1,0 +1,20 @@
+APEX BEARINGS LTD.
+ENGINEERING SPECIFICATION SHEET - RADIAL BALL BEARING
+Designation: BB-6205-ZZ
+Category: Industrial Bearing
+
+Overview:
+Single row deep groove ball bearing with pressed steel cage and non-contact metal shields (ZZ) on both sides. Pre-lubricated with high-grade lithium complex grease for maintenance-free operation.
+
+Dimensions & Load Ratings:
+Bore diameter (d): 25 mm
+Outer diameter (D): 52 mm
+Width (B): 15 mm
+Basic dynamic load rating (Cr): 14.8 kN
+Basic static load rating (Cor): 7.8 kN
+Limiting speed (grease): 15000 rpm
+Bearing Material: High Carbon Chromium Bearing Steel (100Cr6)
+Cage Material: Pressed Sheet Steel
+Operating Temperature Range: -30 to 120 °C
+Tolerance Class: Normal (P0)
+Radial Internal Clearance: CN (Normal)

@@ -1,0 +1,20 @@
+POWERDRIVE ELECTRIC CO.
+TECHNICAL MOTOR CATALOG SPECIFICATION
+Model: EM-3PH-7.5KW
+Category: Electric Motor
+
+Product Description:
+Totally enclosed fan-cooled (TEFC) three-phase asynchronous AC induction motor designed for pumps, fans, conveyors, and compressors. Cast iron housing with high thermal reserve.
+
+Electrical & Mechanical Data:
+Rated output power: 7.5 kW (10 HP)
+Rated voltage: 400 V AC (Delta connection)
+Line frequency: 50 Hz
+Rated speed: 1450 rpm (4 Poles)
+Rated current at 400V: 14.5 A
+Power factor (cos phi): 0.84
+Efficiency class: IE3 Premium Efficiency (90.4% at full load)
+Shaft diameter: 38 mm (Keyed)
+Enclosure Protection: IP55
+Insulation Class: Class F (Temperature rise Class B)
+Duty Type: Continuous S1

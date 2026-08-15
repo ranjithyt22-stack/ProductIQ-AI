@@ -1,0 +1,19 @@
+THERMOSENSE SOLUTIONS
+DATASHEET - INDUSTRIAL RTD TEMPERATURE SENSOR PROBE
+Model: TS-PT100-3M
+Category: Temperature Sensor
+
+Overview:
+Precision mineral-insulated resistance temperature detector (RTD) designed for demanding thermal monitoring in industrial ovens, chemical reactors, and hydraulic reservoirs.
+
+Specifications:
+Operating temperature range: -50 to 400 °C
+Sensor element: PT100 Class A (tolerance ±0.15 °C at 0 °C)
+Wiring configuration: 3-wire RTD
+Probe sheath diameter: 6 mm
+Immersion probe length: 150 mm
+Sheath Material: AISI 316 Stainless Steel
+Lead cable length: 3 m
+Process Connection: 1/2 inch BSP male sliding compression fitting
+Response Time (t90): 4.5 seconds in agitated water
+Protection Rating: IP67 terminal junction

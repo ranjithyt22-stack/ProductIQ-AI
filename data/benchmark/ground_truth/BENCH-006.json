@@ -1,0 +1,55 @@
+{
+  "product_id": "BENCH-006",
+  "product_name": "Axial Piston Variable Hydraulic Pump HP-A10V-45",
+  "manufacturer": "HydroForce Dynamics",
+  "product_code": "HP-A10V-45",
+  "category": "Hydraulic Pump",
+  "description": "Swashplate design variable displacement axial piston pump for hydrostatic industrial transmissions.",
+  "specifications": [
+    {
+      "name": "Nominal Displacement",
+      "value": "45",
+      "unit": "cm³/rev",
+      "raw_value": "45 cm³/rev",
+      "page": 1,
+      "verbatim_evidence": "Geometric displacement: 45 cm³/rev"
+    },
+    {
+      "name": "Nominal Pressure",
+      "value": "280",
+      "unit": "bar",
+      "raw_value": "280 bar",
+      "page": 1,
+      "verbatim_evidence": "Nominal working pressure: 280 bar"
+    },
+    {
+      "name": "Peak Pressure",
+      "value": "350",
+      "unit": "bar",
+      "raw_value": "350 bar",
+      "page": 1,
+      "verbatim_evidence": "Maximum peak pressure: 350 bar"
+    },
+    {
+      "name": "Maximum Speed",
+      "value": "2600",
+      "unit": "rpm",
+      "raw_value": "2600 rpm",
+      "page": 1,
+      "verbatim_evidence": "Maximum drive speed: 2600 rpm"
+    },
+    {
+      "name": "Max Flow Rate",
+      "value": "117",
+      "unit": "l/min",
+      "raw_value": "117 l/min",
+      "page": 1,
+      "verbatim_evidence": "Maximum delivery flow: 117 l/min"
+    }
+  ],
+  "negative_test_attributes": [
+    "Digital CANbus Controller",
+    "Auxiliary Charge Pump"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

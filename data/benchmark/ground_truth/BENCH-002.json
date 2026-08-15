@@ -1,0 +1,63 @@
+{
+  "product_id": "BENCH-002",
+  "product_name": "High-Flow Directional Solenoid Valve PV-200",
+  "manufacturer": "FlowControl Tech Inc",
+  "product_code": "PV-200",
+  "category": "Solenoid Valve",
+  "description": "2-way solenoid operated directional control valve designed for industrial pneumatic and fluid systems.",
+  "specifications": [
+    {
+      "name": "Operating Pressure",
+      "value": "0.5 to 16",
+      "unit": "bar",
+      "raw_value": "0.5 to 16 bar",
+      "page": 1,
+      "verbatim_evidence": "Operating pressure range: 0.5 to 16 bar"
+    },
+    {
+      "name": "Flow Rate",
+      "value": "2400",
+      "unit": "l/min",
+      "raw_value": "2400 l/min",
+      "page": 1,
+      "verbatim_evidence": "Nominal flow rate: 2400 l/min"
+    },
+    {
+      "name": "Supply Voltage",
+      "value": "24",
+      "unit": "V DC",
+      "raw_value": "24 V DC",
+      "page": 1,
+      "verbatim_evidence": "Operating voltage: 24 V DC"
+    },
+    {
+      "name": "Power Consumption",
+      "value": "4.8",
+      "unit": "W",
+      "raw_value": "4.8 W",
+      "page": 1,
+      "verbatim_evidence": "Power consumption: 4.8 W"
+    },
+    {
+      "name": "Port Connection",
+      "value": "G 1/2",
+      "unit": null,
+      "raw_value": "G 1/2",
+      "page": 1,
+      "verbatim_evidence": "Port size: G 1/2"
+    },
+    {
+      "name": "Media Temperature",
+      "value": "-10 to 80",
+      "unit": "°C",
+      "raw_value": "-10 to 80 °C",
+      "page": 1,
+      "verbatim_evidence": "Media temperature: -10 to 80 °C"
+    }
+  ],
+  "negative_test_attributes": [
+    "ATEX Explosion Certification",
+    "Analog Feedback 4-20mA"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

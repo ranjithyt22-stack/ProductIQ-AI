@@ -1,0 +1,19 @@
+GEARTECH POWERDRIVE
+ENGINEERING BULLETIN - HELICAL-BEVEL INDUSTRIAL GEARBOX
+Model Series: GB-HB-85
+Category: Industrial Gearbox
+
+Description:
+High efficiency right-angle helical-bevel gear reducer built in robust cast iron monobloc housing for bulk material handling, mixers, water treatment drives, and bucket elevators.
+
+Technical Specifications:
+Nominal gear reduction ratio (i): 24.5
+Nominal output torque (T2N): 1850 Nm
+Maximum allowable input speed (n1): 1800 rpm
+Transmission efficiency: 94 % (Multi-stage helical bevel)
+Hollow output shaft bore diameter: 60 mm with standard keyway ISO 773
+Mounting Position: Foot mounted or torque arm flange B5
+Lubrication: Synthetic gear oil ISO VG 220
+Housing Material: Grey Cast Iron EN-GJL-250
+Permissible Radial Force (Fr2): 18500 N
+Weight (Dry): 78 kg

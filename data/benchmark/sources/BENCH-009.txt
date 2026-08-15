@@ -1,0 +1,20 @@
+VORTEX FLUIDICS
+PRODUCT SPECIFICATION - HIGH PRESSURE SOLENOID VALVE
+Series: SV-HP-50
+Category: Solenoid Valve
+
+Overview:
+Pilot-operated piston solenoid valve designed for reliable control of high-pressure air, water, neutral gases, and hydraulic oils in test stands and injection systems.
+
+Technical Parameters:
+Differential operating pressure: 1 to 50 bar
+Nominal internal orifice: 12 mm
+Flow factor (Kv): 3.2 m³/h (Water at 1 bar differential)
+Port size: G 1/2 female ISO 228
+Coil voltage: 230 V AC (50/60 Hz)
+Power consumption: 18 VA (Inrush 36 VA)
+Valve Body Material: Stainless Steel AISI 304
+Seat Seal Material: PTFE / PEEK
+Fluid Temperature: -20 to 120 °C
+Duty Cycle: 100% ED continuous
+Protection Class: IP65 according to EN 60529

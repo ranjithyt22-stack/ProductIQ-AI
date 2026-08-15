@@ -1,0 +1,63 @@
+{
+  "product_id": "BENCH-005",
+  "product_name": "Three-Phase Industrial AC Motor EM-3PH-7.5KW",
+  "manufacturer": "PowerDrive Electric Co",
+  "product_code": "EM-3PH-7.5KW",
+  "category": "Electric Motor",
+  "description": "High-efficiency 7.5 kW squirrel cage three-phase AC induction motor for continuous industrial drives.",
+  "specifications": [
+    {
+      "name": "Rated Power",
+      "value": "7.5",
+      "unit": "kW",
+      "raw_value": "7.5 kW",
+      "page": 1,
+      "verbatim_evidence": "Rated output power: 7.5 kW"
+    },
+    {
+      "name": "Supply Voltage",
+      "value": "400",
+      "unit": "V",
+      "raw_value": "400 V",
+      "page": 1,
+      "verbatim_evidence": "Rated voltage: 400 V AC"
+    },
+    {
+      "name": "Full Load Speed",
+      "value": "1450",
+      "unit": "rpm",
+      "raw_value": "1450 rpm",
+      "page": 1,
+      "verbatim_evidence": "Rated speed: 1450 rpm"
+    },
+    {
+      "name": "Full Load Current",
+      "value": "14.5",
+      "unit": "A",
+      "raw_value": "14.5 A",
+      "page": 1,
+      "verbatim_evidence": "Rated current at 400V: 14.5 A"
+    },
+    {
+      "name": "Frequency",
+      "value": "50",
+      "unit": "Hz",
+      "raw_value": "50 Hz",
+      "page": 1,
+      "verbatim_evidence": "Line frequency: 50 Hz"
+    },
+    {
+      "name": "Efficiency Class",
+      "value": "IE3",
+      "unit": null,
+      "raw_value": "IE3",
+      "page": 1,
+      "verbatim_evidence": "Efficiency class: IE3 Premium Efficiency"
+    }
+  ],
+  "negative_test_attributes": [
+    "Integrated Variable Frequency Drive",
+    "Brake Holding Torque"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

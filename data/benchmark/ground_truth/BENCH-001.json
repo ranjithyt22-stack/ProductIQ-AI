@@ -1,0 +1,72 @@
+{
+  "product_id": "BENCH-001",
+  "product_name": "Industrial Pneumatic Cylinder PC-50-100",
+  "manufacturer": "Acme Industrial Systems Pvt. Ltd.",
+  "product_code": "PC-50-100",
+  "category": "Pneumatic Cylinder",
+  "description": "Heavy-duty double-acting pneumatic cylinder designed for high-cycle industrial automation systems.",
+  "specifications": [
+    {
+      "name": "Bore Diameter",
+      "value": "50",
+      "unit": "mm",
+      "raw_value": "50 mm",
+      "page": 1,
+      "verbatim_evidence": "Bore diameter: 50 mm"
+    },
+    {
+      "name": "Stroke Length",
+      "value": "100",
+      "unit": "mm",
+      "raw_value": "100 mm",
+      "page": 1,
+      "verbatim_evidence": "Stroke length: 100 mm"
+    },
+    {
+      "name": "Operating Pressure",
+      "value": "1 to 10",
+      "unit": "bar",
+      "raw_value": "1 to 10 bar",
+      "page": 1,
+      "verbatim_evidence": "Operating pressure: 1 to 10 bar"
+    },
+    {
+      "name": "Operating Temperature",
+      "value": "-10 to 60",
+      "unit": "°C",
+      "raw_value": "-10 to 60 °C",
+      "page": 1,
+      "verbatim_evidence": "Operating temperature range: -10 to 60 °C"
+    },
+    {
+      "name": "Port Size",
+      "value": "G 1/4",
+      "unit": null,
+      "raw_value": "G 1/4",
+      "page": 1,
+      "verbatim_evidence": "Pneumatic port connection: G 1/4"
+    },
+    {
+      "name": "Cushioning",
+      "value": "Adjustable air cushioning",
+      "unit": null,
+      "raw_value": "Adjustable air cushioning",
+      "page": 1,
+      "verbatim_evidence": "Cushioning: Adjustable air cushioning both ends"
+    },
+    {
+      "name": "Theoretical Force Extension",
+      "value": "1178",
+      "unit": "N",
+      "raw_value": "1178 N",
+      "page": 2,
+      "verbatim_evidence": "Theoretical force at 6 bar: 1178 N (Extension)"
+    }
+  ],
+  "negative_test_attributes": [
+    "Warranty Period",
+    "Explosion Proof Rating",
+    "Integrated Position Sensor"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

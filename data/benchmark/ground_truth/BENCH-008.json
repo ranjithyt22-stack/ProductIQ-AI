@@ -1,0 +1,55 @@
+{
+  "product_id": "BENCH-008",
+  "product_name": "Helical Bevel Industrial Speed Reducer Gearbox GB-HB-85",
+  "manufacturer": "GearTech PowerDrive",
+  "product_code": "GB-HB-85",
+  "category": "Industrial Gearbox",
+  "description": "Right-angle helical-bevel gear motor speed reducer with high torque density for industrial conveyors and heavy agitators.",
+  "specifications": [
+    {
+      "name": "Nominal Gear Ratio",
+      "value": "24.5",
+      "unit": null,
+      "raw_value": "24.5:1",
+      "page": 1,
+      "verbatim_evidence": "Nominal gear reduction ratio (i): 24.5"
+    },
+    {
+      "name": "Nominal Output Torque",
+      "value": "1850",
+      "unit": "Nm",
+      "raw_value": "1850 Nm",
+      "page": 1,
+      "verbatim_evidence": "Nominal output torque (T2N): 1850 Nm"
+    },
+    {
+      "name": "Maximum Input Speed",
+      "value": "1800",
+      "unit": "rpm",
+      "raw_value": "1800 rpm",
+      "page": 1,
+      "verbatim_evidence": "Maximum input speed (n1): 1800 rpm"
+    },
+    {
+      "name": "Mechanical Efficiency",
+      "value": "94",
+      "unit": "%",
+      "raw_value": "94 %",
+      "page": 1,
+      "verbatim_evidence": "Transmission efficiency: 94 %"
+    },
+    {
+      "name": "Hollow Output Shaft Diameter",
+      "value": "60",
+      "unit": "mm",
+      "raw_value": "60 mm",
+      "page": 1,
+      "verbatim_evidence": "Hollow output shaft bore diameter: 60 mm"
+    }
+  ],
+  "negative_test_attributes": [
+    "Integral Cooling Fan Kit",
+    "Explosion Proof ATEX Zone 1"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

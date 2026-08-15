@@ -1,0 +1,63 @@
+{
+  "product_id": "BENCH-010",
+  "product_name": "Precision Electric Linear Actuator LA-12V-300MM",
+  "manufacturer": "LinearMotion Dynamics",
+  "product_code": "LA-12V-300MM",
+  "category": "Linear Actuator",
+  "description": "Compact industrial DC electric linear actuator with integrated limit switches for positioning and solar tracking.",
+  "specifications": [
+    {
+      "name": "Stroke Length",
+      "value": "300",
+      "unit": "mm",
+      "raw_value": "300 mm",
+      "page": 1,
+      "verbatim_evidence": "Stroke length: 300 mm"
+    },
+    {
+      "name": "Maximum Dynamic Load",
+      "value": "6000",
+      "unit": "N",
+      "raw_value": "6000 N",
+      "page": 1,
+      "verbatim_evidence": "Max dynamic push/pull load: 6000 N"
+    },
+    {
+      "name": "Full Load Speed",
+      "value": "5",
+      "unit": "mm/s",
+      "raw_value": "5 mm/s",
+      "page": 1,
+      "verbatim_evidence": "Actuation speed at full load: 5 mm/s"
+    },
+    {
+      "name": "Supply Voltage",
+      "value": "12",
+      "unit": "V DC",
+      "raw_value": "12 V DC",
+      "page": 1,
+      "verbatim_evidence": "Operating input voltage: 12 V DC"
+    },
+    {
+      "name": "Duty Cycle",
+      "value": "10",
+      "unit": "%",
+      "raw_value": "10 %",
+      "page": 1,
+      "verbatim_evidence": "Duty cycle: 10 % (2 min continuous on / 18 min off)"
+    },
+    {
+      "name": "Ingress Protection",
+      "value": "IP66",
+      "unit": null,
+      "raw_value": "IP66",
+      "page": 1,
+      "verbatim_evidence": "Ingress protection rating: IP66"
+    }
+  ],
+  "negative_test_attributes": [
+    "Optical Encoder Feedback",
+    "CANopen Bus Interface"
+  ],
+  "expected_readiness": "READY_FOR_COMMERCE"
+}

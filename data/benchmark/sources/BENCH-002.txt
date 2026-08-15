@@ -1,0 +1,19 @@
+FLOWCONTROL TECH INC.
+TECHNICAL SPECIFICATION - DIRECTIONAL SOLENOID VALVE
+Model: PV-200
+Category: Solenoid Valve
+
+Overview:
+High-performance 2-way normally closed solenoid operated directional control valve engineered for high flow pneumatic systems and automated fluid handling.
+
+Specifications:
+Operating pressure range: 0.5 to 16 bar
+Nominal flow rate: 2400 l/min
+Operating voltage: 24 V DC (tolerance ±10%)
+Power consumption: 4.8 W
+Port size: G 1/2
+Media temperature: -10 to 80 °C
+Body Material: Forged Brass
+Seal Material: NBR (Optional FKM)
+Enclosure Protection: IP65 with standard DIN connector
+Response Time: Opening 20 ms, Closing 30 ms
