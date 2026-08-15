@@ -1,4 +1,3 @@
-```jsx
 import React, { useState } from 'react';
 import { Search, Database, Cpu } from 'lucide-react';
 
