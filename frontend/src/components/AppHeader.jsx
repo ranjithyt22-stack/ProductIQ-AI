@@ -12,21 +12,20 @@ export default function AppHeader({ apiHealth = {}, onGlobalSearch = null }) {
     }
   };
 
-  // Backend is considered connected when the API responds.
-  // "degraded" means the backend is running but one dependency
+  // Backend is connected when the API is responding.
+  // "degraded" means the backend is running but a dependency
   // such as Ollama is unavailable.
   const isBackendOk =
     apiHealth.status === 'ok' ||
     apiHealth.status === 'healthy' ||
     apiHealth.status === 'degraded';
 
-  // Ollama is available only when the backend health endpoint
-  // explicitly reports it as connected/available.
+  // Ollama is available only when explicitly reported by the backend.
   const isOllamaOk =
     apiHealth.ollama === 'connected' ||
     apiHealth.ollama === 'available';
 
-  // Vite automatically sets import.meta.env.PROD for production builds.
+  // Vite automatically sets PROD for production builds.
   const environment = import.meta.env.PROD ? 'Production' : 'Local';
 
   return (
@@ -160,4 +159,3 @@ export default function AppHeader({ apiHealth = {}, onGlobalSearch = null }) {
     </header>
   );
 }
-```
