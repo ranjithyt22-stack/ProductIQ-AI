@@ -27,7 +27,7 @@ from backend.config import UPLOADS_DIR
 
 # Gemini configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 from backend.models import (
     ProductInfo, SpecificationAttribute, ValidationResult,
     AIEnrichment, ProductQualityScore, ProductIntelligenceRecord,
