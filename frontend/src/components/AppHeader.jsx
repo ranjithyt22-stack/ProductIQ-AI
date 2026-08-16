@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Search, Database, Cpu } from 'lucide-react';
 
-export default function AppHeader({ apiHealth = {}, onGlobalSearch = null }) {
+export default function AppHeader({
+  apiHealth = {},
+  onGlobalSearch = null
+}) {
   const [searchVal, setSearchVal] = useState('');
 
   const handleSearchSubmit = (e) => {
@@ -13,20 +16,31 @@ export default function AppHeader({ apiHealth = {}, onGlobalSearch = null }) {
   };
 
   // Backend is connected when the API is responding.
-  // "degraded" means the backend is running but a dependency
-  // such as Ollama is unavailable.
+  // "degraded" still means the backend itself is reachable.
   const isBackendOk =
     apiHealth.status === 'ok' ||
     apiHealth.status === 'healthy' ||
     apiHealth.status === 'degraded';
 
-  // Ollama is available only when explicitly reported by the backend.
-  const isOllamaOk =
-    apiHealth.ollama === 'connected' ||
-    apiHealth.ollama === 'available';
+  // Gemini AI status comes from the backend health response.
+  // Example:
+  // {
+  //   "ai": "connected",
+  //   "provider": "Gemini",
+  //   "model": "gemini-3.5-flash-lite"
+  // }
+  const isAiOk =
+    apiHealth.ai === 'connected' ||
+    apiHealth.ai === 'available';
+
+  // Get provider/model from backend.
+  const provider = apiHealth.provider || 'Gemini';
+  const model = apiHealth.model || 'gemini-3.5-flash-lite';
 
   // Vite automatically sets PROD for production builds.
-  const environment = import.meta.env.PROD ? 'Production' : 'Local';
+  const environment = import.meta.env.PROD
+    ? 'Production'
+    : 'Local';
 
   return (
     <header
@@ -108,7 +122,9 @@ export default function AppHeader({ apiHealth = {}, onGlobalSearch = null }) {
               backgroundColor: isBackendOk
                 ? 'rgba(16, 185, 129, 0.1)'
                 : 'rgba(239, 68, 68, 0.1)',
-              color: isBackendOk ? '#10B981' : '#EF4444',
+              color: isBackendOk
+                ? '#10B981'
+                : '#EF4444',
               border: `1px solid ${
                 isBackendOk
                   ? 'rgba(16, 185, 129, 0.3)'
@@ -117,30 +133,41 @@ export default function AppHeader({ apiHealth = {}, onGlobalSearch = null }) {
             }}
           >
             <Database size={12} />
-            Backend: {isBackendOk ? 'Connected' : 'Offline'}
+
+            Backend:{' '}
+            {isBackendOk
+              ? 'Connected'
+              : 'Offline'}
           </span>
 
-          {/* AI Engine Status */}
+          {/* Gemini AI Status */}
           <span
+            title={`Provider: ${provider} | Model: ${model}`}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '4px',
               padding: '3px 8px',
               borderRadius: '4px',
-              backgroundColor: isOllamaOk
+              backgroundColor: isAiOk
                 ? 'rgba(6, 182, 212, 0.1)'
                 : 'rgba(245, 158, 11, 0.1)',
-              color: isOllamaOk ? '#06B6D4' : '#F59E0B',
+              color: isAiOk
+                ? '#06B6D4'
+                : '#F59E0B',
               border: `1px solid ${
-                isOllamaOk
+                isAiOk
                   ? 'rgba(6, 182, 212, 0.3)'
                   : 'rgba(245, 158, 11, 0.3)'
               }`
             }}
           >
             <Cpu size={12} />
-            AI Engine: {isOllamaOk ? 'Ollama' : 'Unavailable'}
+
+            AI Engine:{' '}
+            {isAiOk
+              ? provider
+              : 'Unavailable'}
           </span>
 
           {/* Environment */}
