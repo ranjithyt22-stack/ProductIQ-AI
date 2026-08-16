@@ -88,6 +88,7 @@ PRODUCT_STORE: Dict[str, ProductIntelligenceRecord] = {}
 class HealthResponse(BaseModel):
     status: str
     ai: str
+    ai_error: Optional[str] = None
     database: str = "connected"
     provider: str = "Gemini"
     model: str = GEMINI_MODEL
@@ -169,12 +170,17 @@ class CreateProductRequest(BaseModel):
 @app.get("/health", response_model=HealthResponse, tags=["Health"])
 def get_health():
     """
-    Liveness, database, and Gemini AI configuration/connectivity health check.
+    Liveness, database, and Gemini AI connectivity health check.
+
+    This endpoint performs a small authenticated Gemini generation request so
+    the response reflects whether the configured API key and model can actually
+    generate content, rather than only checking whether the key exists.
     """
     if not GEMINI_API_KEY:
         return HealthResponse(
             status="degraded",
             ai="unavailable",
+            ai_error="GEMINI_API_KEY is missing from the backend environment variables.",
             database="connected",
             provider="Gemini",
             model=GEMINI_MODEL
@@ -185,23 +191,40 @@ def get_health():
 
         client = genai.Client(api_key=GEMINI_API_KEY)
 
-        # Lightweight authenticated API check.
-        list(client.models.list(page_size=1))
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents="Reply with exactly: OK"
+        )
+
+        response_text = getattr(response, "text", None)
+
+        if response_text and response_text.strip():
+            return HealthResponse(
+                status="ok",
+                ai="connected",
+                ai_error=None,
+                database="connected",
+                provider="Gemini",
+                model=GEMINI_MODEL
+            )
 
         return HealthResponse(
-            status="ok",
-            ai="connected",
+            status="degraded",
+            ai="unavailable",
+            ai_error="Gemini returned an empty response.",
             database="connected",
             provider="Gemini",
             model=GEMINI_MODEL
         )
 
     except Exception as e:
-        logger.warning(f"Gemini health check failed: {e}")
+        error_message = str(e).strip() or e.__class__.__name__
+        logger.exception("Gemini health check failed")
 
         return HealthResponse(
             status="degraded",
             ai="unavailable",
+            ai_error=error_message[:1000],
             database="connected",
             provider="Gemini",
             model=GEMINI_MODEL
